@@ -1,0 +1,17 @@
+background_b: 255
+background_g: 86
+background_r: 69
+dol: l
+gora: p
+lewo: d
+prawo: g
+rosdistro: 'melodic
+
+  '
+roslaunch:
+  uris: {host_pr_thinkpad_edge_e540__33385: 'http://pr-ThinkPad-Edge-E540:33385/',
+    host_pr_thinkpad_edge_e540__36107: 'http://pr-ThinkPad-Edge-E540:36107/', host_pr_thinkpad_edge_e540__38853: 'http://pr-ThinkPad-Edge-E540:38853/'}
+rosversion: '1.14.3
+
+  '
+run_id: d6b94818-4372-11e9-a620-fcf8aec37d69

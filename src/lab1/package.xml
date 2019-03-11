@@ -4,10 +4,10 @@
   <version>1.0.0</version>
   <description>Lab1</description>
   
- <maintainer email="todo@todo.com">Kowalski</maintainer>
+ <maintainer email="todo@elka.pw.edu.pl">Kowalski</maintainer>
 
   <license>BSD</license>
-  <author> przewni_kowalski</author>
+  <author>rzewnicki_kowalski</author>
 
   <buildtool_depend>catkin</buildtool_depend>
   <run_depend>geometry_msgs</run_depend>
