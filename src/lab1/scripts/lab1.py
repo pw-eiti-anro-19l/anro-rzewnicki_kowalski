@@ -1,12 +1,9 @@
 #!/usr/bin/env python
 
 from __future__ import print_function
-
 import roslib; roslib.load_manifest('lab1')
 import rospy
-
 from geometry_msgs.msg import Twist
-
 import sys, select, termios, tty
 
 msg = """
@@ -16,16 +13,12 @@ p l d g
 Aby zakonczyc: 
 CTRL-C 
 """
-up = rospy.get_param("/gora")
-down = rospy.get_param("/dol")
-left = rospy.get_param("/lewo")
-right = rospy.get_param("/prawo")
 
 moves_of_turtle = {
-        up :(1,0,0,0),
-        left:(0,0,0,1),
-        right:(0,0,0,-1),
-        down:(-1,0,0,0),
+    rospy.get_param("/lab1/gora") :(1,0,0,0),
+    rospy.get_param("/lab1/lewo") :(0,0,0,1),
+    rospy.get_param("/lab1/prawo"):(0,0,0,-1),
+    rospy.get_param("/lab1/dol") :(-1,0,0,0),
     }
 
 
@@ -37,14 +30,11 @@ def getKey():
     return key
 
 
-def vels(turn):
-    return "currently:\tturn %s " % (turn)
-
 if __name__=="__main__":
     settings = termios.tcgetattr(sys.stdin)
 
-    pub = rospy.Publisher('cmd_vel', Twist, queue_size = 5)
-    rospy.init_node('teleop_twist_keyboard')
+    pub = rospy.Publisher('turtle1/cmd_vel', Twist, queue_size = 5)
+    rospy.init_node('lab1')
 
     speed =  0.5
     turn = 1.0
@@ -52,11 +42,9 @@ if __name__=="__main__":
     y = 0
     z = 0
     th = 0
-    status = 0
 
     try:
         print(msg)
-        print(vels(turn))
         while(1):
             key = getKey()
             if key in moves_of_turtle.keys():
