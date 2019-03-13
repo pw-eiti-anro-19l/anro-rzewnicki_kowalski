@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 
 from __future__ import print_function
-import roslib; roslib.load_manifest('lab1')
 import rospy
 from geometry_msgs.msg import Twist
 import sys, select, termios, tty
