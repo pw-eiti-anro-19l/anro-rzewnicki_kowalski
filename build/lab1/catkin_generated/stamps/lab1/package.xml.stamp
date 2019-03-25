@@ -1,15 +1,20 @@
 <?xml version="1.0"?>
-<package>
+<package format="2">
   <name>lab1</name>
-  <version>1.0.0</version>
-  <description>Lab1</description>
-  
- <maintainer email="todo@todo.com">Kowalski</maintainer>
+  <version>0.1.0</version>
+  <description>lab1</description>
+
+  <maintainer email="todo@gmail.com">Kowalski</maintainer>
 
   <license>BSD</license>
-  <author> przewni_kowalski</author>
-
   <buildtool_depend>catkin</buildtool_depend>
-  <run_depend>geometry_msgs</run_depend>
-  <run_depend>rospy</run_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>std_msgs</build_depend>
+
+  <build_export_depend>rospy</build_export_depend>
+  <build_export_depend>std_msgs</build_export_depend>
+
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+
 </package>

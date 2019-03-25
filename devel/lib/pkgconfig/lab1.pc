@@ -2,7 +2,7 @@ prefix=/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel
 
 Name: lab1
 Description: Description of lab1
-Version: 1.0.0
+Version: 0.1.0
 Cflags: 
 Libs: -L/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/lib 
 Requires: 

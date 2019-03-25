@@ -14,7 +14,7 @@ CTRL-C
 """
 
 moves_of_turtle = {
-    rospy.get_param("/lab1/gora") :(1,0,0,0),
+    rospy.get_param("/lab1/top") :(1,0,0,0),
     rospy.get_param("/lab1/lewo") :(0,0,0,1),
     rospy.get_param("/lab1/prawo"):(0,0,0,-1),
     rospy.get_param("/lab1/dol") :(-1,0,0,0),

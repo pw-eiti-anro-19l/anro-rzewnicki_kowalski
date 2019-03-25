@@ -122,8 +122,9 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build/gtest/cmake_install.cmake")
-  include("/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build/lab1/cmake_install.cmake")
   include("/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build/beginner_tutorials/cmake_install.cmake")
+  include("/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build/lab1/cmake_install.cmake")
+  include("/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build/testbot_lab2/cmake_install.cmake")
 
 endif()
 

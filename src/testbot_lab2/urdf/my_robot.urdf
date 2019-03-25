@@ -1,0 +1,37 @@
+<xacro:property name="filename1" value="$(find package)/param1.yaml"/>
+<xacro:property name="filename2" value="$(find package)/param2.yaml"/>
+<xacro:property name="filename3" value="$(find package)/param3.yaml"/>
+<xacro:property name="param1" value="${load_yaml(filename1)}"/>
+<xacro:property name="param2" value="${load_yaml(filename2)}"/>
+<xacro:property name="param3" value="${load_yaml(filename3)}"/>
+
+
+  <robot name="test_robot">
+    <link name="link1" />
+    <link name="link2" />
+    <link name="link3" />
+    <link name="base" />
+
+    <joint name="joint1" type="continuous">
+    <parent link="base"/>
+     <child link="link1"/>
+     <origin xyz="0 0 0" rpy="${param1}" />
+     <axis xyz="0 0 1" />
+   	</joint>
+
+   	<joint name="joint2" type="continuous">
+     <parent link="link1"/>
+     <child link="link2"/>
+      <origin xyz="1 0 0" rpy="${param2}" />
+      <axis xyz="0 0 1" />
+   	</joint>
+ 
+   	<joint name="joint3" type="continuous">
+     <parent link="link2"/>
+    <child link="link3"/>
+    <origin xyz="1 0 1" rpy="${param3}" />
+	</joint>
+ 
+
+
+ </robot>

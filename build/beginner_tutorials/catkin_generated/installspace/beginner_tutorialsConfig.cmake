@@ -129,7 +129,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/install/lib;/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/install/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

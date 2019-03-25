@@ -52,7 +52,3 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/lab1" TYPE FILE FILES "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/lab1/package.xml")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/lab1" TYPE PROGRAM FILES "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build/lab1/catkin_generated/installspace/lab1.py")
-endif()
-
