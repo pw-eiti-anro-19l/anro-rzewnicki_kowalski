@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<robot name="robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:property name="i1" value="${load_yaml('../urdf1.yaml')}"/>
+    <xacro:property name="i2" value="${load_yaml('../urdf2.yaml')}"/>
+    <xacro:property name="i3" value="${load_yaml('../urdf3.yaml')}"/>
+ 
+    <material name="blue">
+        <color rgba="0 0 0.8 1"/>
+    </material>
+
+    <material name="white"> 
+        <color rgba="1 1 1 1"/>
+    </material>
+
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <cylinder length="0.04" radius="0.05"/>
+            </geometry>
+            <origin xyz="0 0 -0.02"/>
+            <material name="blue"/>
+        </visual>
+    </link>
+
+    <link name="link1">
+        <visual>
+            <geometry>
+                <box size="${i2['link_len']} 0.04 0.04"/>
+            </geometry>
+            <origin xyz="${i2['link_xyz']}" rpy="${i2['link_rpy']}"/>
+            <material name="blue"/>
+        </visual>
+    </link>
+
+    <link name="link2">
+        <visual>
+            <geometry>
+                <box size="${i3['link_len']} 0.04 0.04"/>
+            </geometry>
+            <origin xyz="${i3['link_xyz']}" rpy="${i3['link_rpy']}"/>
+            <material name="blue"/>
+        </visual>
+    </link>
+
+    <link name="link3">
+        <visual>
+		<geometry>
+			<box size="1 1 1"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <material name="blue"/>
+        </visual>
+    </link>
+
+    <joint name="base_link1" type="revolute">
+        <parent link="base_link"/>
+        <child link="link1"/>
+        <origin xyz="${i1['joint_xyz']}" rpy="${i1['joint_rpy']}"/>
+	<axis xyz="${i1['axis']}"/>
+        <limit effort="1000.0" lower="-1.57075" upper="1.57075" velocity="0.7"/>
+    </joint>
+
+    <joint name="link1_link2" type="revolute">
+        <parent link="link1"/>
+        <child link="link2"/>
+        <origin xyz="${i2['joint_xyz']}" rpy="${i2['joint_rpy']}"/>
+	<axis xyz="${i2['axis']}"/>
+        <limit effort="1000.0" lower="-1.57075" upper="1.57075" velocity="0.7"/>
+    </joint>
+
+    <joint name="link2_link3" type="prismatic">
+        <parent link="link2"/>
+        <child link="link3"/>
+        <origin xyz="${i3['joint_xyz']}" rpy="${i3['joint_rpy']}"/>
+        <limit effort="1000.0" lower="0" upper="0.4" velocity="0.7"/>
+        <axis xyz="0 0 1"/>
+    </joint>
+
+</robot>
