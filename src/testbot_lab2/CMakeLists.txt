@@ -6,6 +6,7 @@ find_package(catkin REQUIRED COMPONENTS
   sensor_msgs
   std_msgs
   tf
+  urdf
 )
 
 #find_package(orocos_kdl REQUIRED)

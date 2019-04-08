@@ -35,7 +35,7 @@
     <link name="link2">
         <visual>
             <geometry>
-                <box size="${i3['link_len']} 0.04 0.04"/>
+                <box size="${i3['link_len']} 0.002 0.002"/>
             </geometry>
             <origin xyz="${i3['link_xyz']}" rpy="${i3['link_rpy']}"/>
             <material name="blue"/>

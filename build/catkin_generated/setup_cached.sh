@@ -7,10 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/lib:$LD_LIBRARY_PATH"
-export PKG_CONFIG_PATH="/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD="/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build"
-export PYTHONPATH="/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/lib/python2.7/dist-packages:$PYTHONPATH"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/share/common-lisp"
-export ROS_PACKAGE_PATH="/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src:$ROS_PACKAGE_PATH"

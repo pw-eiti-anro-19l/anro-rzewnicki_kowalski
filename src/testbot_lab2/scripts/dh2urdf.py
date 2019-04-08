@@ -61,7 +61,7 @@ for x in f:
         myfile.write("axis: "+tmp_str+"\n")
         myfile.write("link_len: {}\n".format(words[0]))
         myfile.write("link_rpy: 0 0 0\n")
-        myfile.write("link_xyz: {} 0 0\n".format(words[0]))
+        myfile.write("link_xyz: {} 0 0\n".format(float(words[0])/2))
   #  j1.write(tmp_xyz)
   #  j2.write(tmp_rpy)
   #  j3.write(tmp_str)
