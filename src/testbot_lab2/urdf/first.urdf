@@ -15,7 +15,7 @@
     <link name="base_link">
         <visual>
             <geometry>
-                <cylinder length="0.04" radius="0.05"/>
+                  <cylinder length="0.04" radius="0.04"/>
             </geometry>
             <origin xyz="0 0 -0.02"/>
             <material name="blue"/>
@@ -35,7 +35,7 @@
     <link name="link2">
         <visual>
             <geometry>
-                <box size="${i3['link_len']} 0.002 0.002"/>
+                 <box size="${i3['link_len']} 0.04 0.04"/>
             </geometry>
             <origin xyz="${i3['link_xyz']}" rpy="${i3['link_rpy']}"/>
             <material name="blue"/>
@@ -45,7 +45,7 @@
     <link name="link3">
         <visual>
 	    <geometry>
-	        <box size="0.01 0.01 0.01"/>
+	       <box size="0.04 0.04 0.2"/>
             </geometry>
             <origin xyz="0 0 0" rpy="0 0 0"/>
             <material name="blue"/>
