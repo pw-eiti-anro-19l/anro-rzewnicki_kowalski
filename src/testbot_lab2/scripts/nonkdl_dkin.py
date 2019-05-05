@@ -8,8 +8,21 @@ from sensor_msgs.msg import JointState
 from geometry_msgs.msg import PoseStamped
 
 
-def nonkdl_kin(information):
+def to_pose_stamped(xyz,quat):
+    pose = PoseStamped()
+    pose.header.frame_id = 'base_link'
+    pose.header.stamp = rospy.Time.now()
+    pose.pose.position.x = xyz[0]
+    pose.pose.position.y = xyz[1]
+    pose.pose.position.z = xyz[2]
+    pose.pose.orientation.x = quat[0]
+    pose.pose.orientation.y = quat[1]
+    pose.pose.orientation.z = quat[2]
+    pose.pose.orientation.w = quat[3]
+    return pose 
 
+def nonkdl_kinematics(information):
+    i = 0
     for i in range(count-1):
         trans_x = translation_matrix((dh[i][0], 0, 0))
         trans_z = translation_matrix((0, 0, dh[i][1]))
@@ -17,40 +30,33 @@ def nonkdl_kin(information):
         rotation_z = rotation_matrix(information.position[i], (0, 0, 1))
 
         concatenated.append( concatenate_matrices(trans_z, rotation_z, trans_x, rotation_x))
-    i=i+1
-    trans_x = translation_matrix((information.position[i], 0, 0))
-    trans_z = translation_matrix((0, 0, dh[i][1]))
+    i=2
+    trans_x = translation_matrix((0, 0, dh[i][0]))
+    trans_z = translation_matrix((information.position[i], 0, 0))
     rotation_x = rotation_matrix(dh[i][2], (1, 0, 0))
     rotation_z = rotation_matrix(dh[i][3], (0, 0, 1))
     concatenated.append( concatenate_matrices(trans_z, rotation_z, trans_x, rotation_x))
 
-    Tend = concatenate_matrices(concatenated[0],concatenated[1],concatenated[2])
-    x, y, z = translation_from_matrix(Tend)
-    qx, qy, qz, qw = quaternion_from_matrix(Tend)
+    Tend = concatenate_matrices(concatenated[2],concatenated[1],concatenated[0])
+    xyz = translation_from_matrix(Tend)
+    quat = quaternion_from_matrix(Tend)
     del concatenated[:]
     #concatenated.clear()
-    pose = PoseStamped()
-    pose.header.frame_id = 'base_link'
-    pose.header.stamp = rospy.Time.now()
-    pose.pose.position.x = x
-    pose.pose.position.y = y
-    pose.pose.position.z = z
-    pose.pose.orientation.x = qx
-    pose.pose.orientation.y = qy
-    pose.pose.orientation.z = qz
-    pose.pose.orientation.w = qw
-    pub.publish(pose)
+    #rospy.sleep(1)
+    pub.publish(to_pose_stamped(xyz,quat))
 
 
 if __name__ == '__main__':
-    i=0
     rospy.init_node('NONKDL_KIN', anonymous=True)
-    pub = rospy.Publisher('pose_stamped', PoseStamped, queue_size=10)
-    rospy.Subscriber('joint_states', JointState, nonkdl_kin)
 
+
+    i=0
+    concatenated = []
     print os.path.dirname(os.path.realpath(__file__))
-    #f = open(os.path.dirname(os.path.realpath(__file__)) +'dh.txt', 'r')
     dh = np.loadtxt(os.path.dirname(os.path.realpath(__file__)) +'/dh.txt',dtype = 'd', delimiter=' ')
     count = np.loadtxt(os.path.dirname(os.path.realpath(__file__)) +'/count.txt',dtype='int_')
-    concatenated = []
+
+    pub = rospy.Publisher('pose_stamped_non', PoseStamped, queue_size=10)
+    rospy.Subscriber('joint_states', JointState, nonkdl_kinematics)
+
     rospy.spin()

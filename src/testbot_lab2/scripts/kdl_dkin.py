@@ -9,7 +9,18 @@ from tf.transformations import *
 from sensor_msgs.msg import JointState
 from geometry_msgs.msg import PoseStamped
 
-
+def to_pose_stamped(xyz,quat):
+    pose = PoseStamped()
+    pose.header.frame_id = 'base_link'
+    pose.header.stamp = rospy.Time.now()
+    pose.pose.position.x = xyz[2]
+    pose.pose.position.y = xyz[1]
+    pose.pose.position.z = xyz[0]
+    pose.pose.orientation.x = quat[3]
+    pose.pose.orientation.y = quat[2]
+    pose.pose.orientation.z = quat[1]
+    pose.pose.orientation.w = quat[0]
+    return pose
 
 def kdl_kinematic(information):
 
@@ -34,27 +45,18 @@ def kdl_kinematic(information):
     fksolver.JntToCart(jntAngles, finalFrame)
     q = finalFrame.M.GetQuaternion()
 
-    pose = PoseStamped()
-    pose.header.frame_id = 'base_link'
-    pose.header.stamp = rospy.Time.now()
-    pose.pose.position.x = finalFrame.p[2]
-    pose.pose.position.y = finalFrame.p[1]
-    pose.pose.position.z = finalFrame.p[0]
-    pose.pose.orientation.x = q[3]
-    pose.pose.orientation.y = q[2]
-    pose.pose.orientation.z = q[1]
-    pose.pose.orientation.w = q[0]
-    pub.publish(pose)
+    pub.publish(to_pose_stamped(finalFrame.p,q))
 
 
 if __name__ == '__main__':
     rospy.init_node('KDL_KIN', anonymous=True)
+
     print os.path.dirname(os.path.realpath(__file__))
     dh = np.loadtxt(os.path.dirname(os.path.realpath(__file__)) +'/dh.txt',dtype = 'd', delimiter=' ')
     count = np.loadtxt(os.path.dirname(os.path.realpath(__file__)) +'/count.txt', dtype='int_')
     concatenated = []
-    pub = rospy.Publisher('pose_stamped', PoseStamped, queue_size=10)
 
+    pub = rospy.Publisher('pose_stamped_kdl', PoseStamped, queue_size = 10)
     rospy.Subscriber('joint_states', JointState, kdl_kinematic)
 
     rospy.spin()
