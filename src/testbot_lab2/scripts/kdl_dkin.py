@@ -16,7 +16,7 @@ def kdl_kinematic(information):
     myChain = Chain()
     myframe = Frame();
 
-    myChain.addSegment(Segment(Joint(Joint.None),myframe = Frame().DH(0, 0, 0, 0)))
+    myChain.addSegment(Segment(Joint(Joint.None),myframe.DH(0, 0, 0, 0)))
 
     myChain.addSegment(Segment(Joint(Joint.RotZ),myframe.DH(dh[0][0],dh[0][2],dh[0][1],dh[0][3])))
 
@@ -32,7 +32,7 @@ def kdl_kinematic(information):
     fksolver = ChainFkSolverPos_recursive(myChain)
     finalFrame = Frame()
     fksolver.JntToCart(jntAngles, finalFrame)
-    q = pFrame.M.GetQuaternion()
+    q = finalFrame.M.GetQuaternion()
 
     pose = PoseStamped()
     pose.header.frame_id = 'base_link'
@@ -51,7 +51,7 @@ if __name__ == '__main__':
     rospy.init_node('KDL_KIN', anonymous=True)
     print os.path.dirname(os.path.realpath(__file__))
     dh = np.loadtxt(os.path.dirname(os.path.realpath(__file__)) +'/dh.txt',dtype = 'd', delimiter=' ')
-    count = np.loadtxt(os.path.dirname(os.path.realpath(__file__)) +'/count.txt')
+    count = np.loadtxt(os.path.dirname(os.path.realpath(__file__)) +'/count.txt', dtype='int_')
     concatenated = []
     pub = rospy.Publisher('pose_stamped', PoseStamped, queue_size=10)
 

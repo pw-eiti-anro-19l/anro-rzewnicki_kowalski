@@ -18,7 +18,7 @@ def nonkdl_kin(information):
 
         concatenated.append( concatenate_matrices(trans_z, rotation_z, trans_x, rotation_x))
     i=i+1
-    trans_x = translation_matrix((data.position[i], 0, 0))
+    trans_x = translation_matrix((information.position[i], 0, 0))
     trans_z = translation_matrix((0, 0, dh[i][1]))
     rotation_x = rotation_matrix(dh[i][2], (1, 0, 0))
     rotation_z = rotation_matrix(dh[i][3], (0, 0, 1))
@@ -27,8 +27,8 @@ def nonkdl_kin(information):
     Tend = concatenate_matrices(concatenated[0],concatenated[1],concatenated[2])
     x, y, z = translation_from_matrix(Tend)
     qx, qy, qz, qw = quaternion_from_matrix(Tend)
-    print Tk
-    concatenated.clear()
+    del concatenated[:]
+    #concatenated.clear()
     pose = PoseStamped()
     pose.header.frame_id = 'base_link'
     pose.header.stamp = rospy.Time.now()
@@ -51,6 +51,6 @@ if __name__ == '__main__':
     print os.path.dirname(os.path.realpath(__file__))
     #f = open(os.path.dirname(os.path.realpath(__file__)) +'dh.txt', 'r')
     dh = np.loadtxt(os.path.dirname(os.path.realpath(__file__)) +'/dh.txt',dtype = 'd', delimiter=' ')
-    count = np.loadtxt(os.path.dirname(os.path.realpath(__file__)) +'/count.txt')
+    count = np.loadtxt(os.path.dirname(os.path.realpath(__file__)) +'/count.txt',dtype='int_')
     concatenated = []
     rospy.spin()

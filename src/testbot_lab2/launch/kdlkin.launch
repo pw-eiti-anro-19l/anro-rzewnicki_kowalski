@@ -1,5 +1,5 @@
 <launch>
-    <param name="robot_description" command="xacro --inorder '$(find lab2)/urdf/second.urdf'"/>
+    <param name="robot_description" command="xacro --inorder '$(find testbot_lab2)/urdf/second.urdf'"/>
 
     <node name="kdl_dkin" pkg="testbot_lab2" type="kdl_dkin.py" />
 </launch>
