@@ -11,12 +11,12 @@ from geometry_msgs.msg import PoseStamped
 
 
 
-def kdl_kin(information):
+def kdl_kinematic(information):
 
     myChain = Chain()
     myframe = Frame();
 
-    myChain.addSegment(Segment(Joint(Joint.None),myframe = Frame();.DH(0, 0, 0, 0)))
+    myChain.addSegment(Segment(Joint(Joint.None),myframe = Frame().DH(0, 0, 0, 0)))
 
     myChain.addSegment(Segment(Joint(Joint.RotZ),myframe.DH(dh[0][0],dh[0][2],dh[0][1],dh[0][3])))
 
@@ -49,14 +49,12 @@ def kdl_kin(information):
 
 if __name__ == '__main__':
     rospy.init_node('KDL_KIN', anonymous=True)
-
-    pub = rospy.Publisher('pose_stamped', PoseStamped, queue_size=10)
-    marker_pub = rospy.Publisher('kdl_visualization', Marker, queue_size=100)
-
-    rospy.Subscriber('joint_states', JointState, kdl_kin)
-    f = open('dh.txt', 'r')
-    dh = np.loadtxt('dh.txt',dtype = 'd', delimiter=' ')
+    print os.path.dirname(os.path.realpath(__file__))
+    dh = np.loadtxt(os.path.dirname(os.path.realpath(__file__)) +'/dh.txt',dtype = 'd', delimiter=' ')
+    count = np.loadtxt(os.path.dirname(os.path.realpath(__file__)) +'/count.txt')
     concatenated = []
-    count = np.loadtxt('count.txt')
+    pub = rospy.Publisher('pose_stamped', PoseStamped, queue_size=10)
+
+    rospy.Subscriber('joint_states', JointState, kdl_kinematic)
 
     rospy.spin()

@@ -17,7 +17,7 @@ def nonkdl_kin(information):
         rotation_z = rotation_matrix(information.position[i], (0, 0, 1))
 
         concatenated.append( concatenate_matrices(trans_z, rotation_z, trans_x, rotation_x))
-    i++
+    i=i+1
     trans_x = translation_matrix((data.position[i], 0, 0))
     trans_z = translation_matrix((0, 0, dh[i][1]))
     rotation_x = rotation_matrix(dh[i][2], (1, 0, 0))
@@ -47,8 +47,9 @@ if __name__ == '__main__':
     pub = rospy.Publisher('pose_stamped', PoseStamped, queue_size=10)
     rospy.Subscriber('joint_states', JointState, nonkdl_kin)
 
-    f = open('dh.txt', 'r')
-    dh = np.loadtxt('dh.txt',dtype = 'd', delimiter=' ')
+    print os.path.dirname(os.path.realpath(__file__))
+    #f = open(os.path.dirname(os.path.realpath(__file__)) +'dh.txt', 'r')
+    dh = np.loadtxt(os.path.dirname(os.path.realpath(__file__)) +'/dh.txt',dtype = 'd', delimiter=' ')
+    count = np.loadtxt(os.path.dirname(os.path.realpath(__file__)) +'/count.txt')
     concatenated = []
-    count = np.loadtxt('count.txt')
     rospy.spin()
