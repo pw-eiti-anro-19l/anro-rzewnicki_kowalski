@@ -1,6 +1,6 @@
 <launch>
   <param name="robot_description" command="xacro --inorder '$(find testbot_lab2)/urdf/second.urdf'"/>
-  <arg name="rvizconfig" default="$(find testbot_lab2)/rviz/default.rviz" />
+  <arg name="rvizconfig" default="$(find testbot_lab2)/rviz/defaultkin.rviz" />
 
   <param name="use_gui" value="true"/>
 
