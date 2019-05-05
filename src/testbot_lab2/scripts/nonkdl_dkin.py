@@ -43,6 +43,7 @@ def nonkdl_kin(information):
 
 
 if __name__ == '__main__':
+    i=0
     rospy.init_node('NONKDL_KIN', anonymous=True)
     pub = rospy.Publisher('pose_stamped', PoseStamped, queue_size=10)
     rospy.Subscriber('joint_states', JointState, nonkdl_kin)

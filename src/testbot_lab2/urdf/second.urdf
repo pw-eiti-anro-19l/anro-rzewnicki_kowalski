@@ -8,16 +8,16 @@
         <color rgba="0 0 0.8 1"/>
     </material>
 
-    <material name="white"> 
-        <color rgba="1 1 1 1"/>
+    <material name="yellow"> 
+        <color rgba="1 1 0.5 1"/>
     </material>
 
     <link name="base_link">
         <visual>
             <geometry>
-                <cylinder length="0.04" radius="0.04"/>
+                <cylinder length="0.2" radius="0.02"/>
             </geometry>
-            <origin xyz="0 0 -0.02"/>
+            <origin xyz="0 0 0.1"/>
             <material name="blue"/>
         </visual>
     </link>
@@ -28,7 +28,7 @@
                 <box size="${i2['link_len']} 0.04 0.04"/>
             </geometry>
             <origin xyz="${i2['link_xyz']}" rpy="${i2['link_rpy']}"/>
-            <material name="blue"/>
+            <material name="yellow"/>
         </visual>
     </link>
 
@@ -45,10 +45,10 @@
     <link name="link3">
         <visual>
 		<geometry>
-			<box size="0.04 0.04 0.2"/>
+			<box size="0.04 0.04 0.4"/>
             </geometry>
-            <origin xyz="0 0 -0.1" rpy="0 0 0"/>
-            <material name="blue"/>
+            <origin xyz="0 0 -0.2" rpy="0 0 0"/>
+            <material name="yellow"/>
         </visual>
     </link>
 
