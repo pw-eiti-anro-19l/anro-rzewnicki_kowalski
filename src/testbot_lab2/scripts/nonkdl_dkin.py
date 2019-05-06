@@ -22,19 +22,27 @@ def to_pose_stamped(xyz,quat):
     return pose 
 
 def nonkdl_kinematics(information):
-    i = 0
-    for i in range(count-1):
-        trans_x = translation_matrix((dh[i][0], 0, 0))
-        trans_z = translation_matrix((0, 0, dh[i][1]))
-        rotation_x = rotation_matrix(dh[i][2], (1, 0, 0))
-        rotation_z = rotation_matrix(information.position[i], (0, 0, 1))
+ 
+    #pierwszy stopien
+    trans_x = translation_matrix((dh[2][0], 0, 0))
+    trans_z = translation_matrix((0, 0, -dh[0][1]))
+    rotation_x = rotation_matrix(dh[0][2], (1, 0, 0))
+    rotation_z = rotation_matrix(-information.position[1], (0, 0, 1))
+    concatenated.append( concatenate_matrices(trans_z, rotation_z, trans_x, rotation_x))
 
-        concatenated.append( concatenate_matrices(trans_z, rotation_z, trans_x, rotation_x))
-    i=2
-    trans_x = translation_matrix((0, 0, dh[i][0]))
-    trans_z = translation_matrix((information.position[i], 0, 0))
-    rotation_x = rotation_matrix(dh[i][2], (1, 0, 0))
-    rotation_z = rotation_matrix(dh[i][3], (0, 0, 1))
+ # drugi stopien
+    trans_x = translation_matrix((dh[1][0], 0, 0))
+    trans_z = translation_matrix((0, 0, 0))
+    rotation_x = rotation_matrix(dh[1][2], (1, 0, 0))
+    rotation_z = rotation_matrix(-information.position[0], (0, 0, 1))
+
+    concatenated.append( concatenate_matrices(trans_z, rotation_z, trans_x, rotation_x))
+
+    # trzeci stopien
+    trans_x = translation_matrix((0, 0, 0))
+    trans_z = translation_matrix((0, 0, -information.position[2]))
+    rotation_x = rotation_matrix(dh[2][2], (1, 0, 0))
+    rotation_z = rotation_matrix(dh[2][3], (0, 0, 1))
     concatenated.append( concatenate_matrices(trans_z, rotation_z, trans_x, rotation_x))
 
     Tend = concatenate_matrices(concatenated[2],concatenated[1],concatenated[0])
