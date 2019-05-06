@@ -7,6 +7,17 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   tf
   urdf
+  message_generation
+)
+add_service_files(DIRECTORY srv
+  FILES
+  myjint.srv
+  myoint.srv
+)
+generate_messages(
+  DEPENDENCIES
+  std_msgs
+  sensor_msgs
 )
 
 
@@ -15,12 +26,10 @@ catkin_package(
 #  LIBRARIES testbot_lab2
 #  CATKIN_DEPENDS kdl rospy sensor_msgs std_msgs tf
 #  DEPENDS system_lib
+CATKIN_DEPENDS message_runtime std_msgs sensor_msgs rospy
 )
 
 
-include_directories(
-# include
-  ${catkin_INCLUDE_DIRS}
-)
+include_directories( include ${catkin_INCLUDE_DIRS} )
 
 
