@@ -7,5 +7,4 @@
 subdirs("gtest")
 subdirs("beginner_tutorials")
 subdirs("lab1")
-subdirs("lab2")
 subdirs("testbot_lab2")
