@@ -32,8 +32,12 @@ def to_joint_state(px,py,pz):
 	js.position.append(px)
 	pub.publish(js)
 
-def inter_lin(time,target_pos,prev_pos):
-	next_pos = prev_pos + ((target_pos-prev_pos)/(time*1.0))
+def inter_lin(time,target_pos,prev_pos,start_pos):
+    
+    #error=abs(start_pos-target_pos)
+     
+    
+	next_pos = prev_pos + ((target_pos-start_pos)/(100))
 	#start_time = time
 	return next_pos
 
@@ -52,18 +56,30 @@ def interpolation(information):
 	if(information.x > 0.38) :
 		return 'Wrong value - prysmatic x > 0.38'
 	if( information.y > 2):
-		return 'Wrong value - rotation a2 y > 2'
+		return 'Wrong value - rotation a2 y > 3.14'
  	if( information.z >2 ):
-		return 'Wrong value - rotation a1 z > 2'
+		return 'Wrong value - rotation a1 z > 3.13'
 	if(information.time <= 0):
 		return 'Wrong time value:  must be greater than 0'
 
 	if(information.type == 'linear'):
-		rate = rospy.Rate(2) # rate if too fast used with rate.sleep() at the end of loop
-		for i in range(10):
-			px = inter_lin(information.time, information.x, prev_x)
-			py = inter_lin(information.time, information.y, prev_y)
-			pz = inter_lin(information.time, information.z, prev_z)	
+		
+		rate = rospy.Rate(10) # rate if too fast used with rate.sleep() at the end of loop
+		
+		#setting starting point
+		start_pos_x=prev_x
+		start_pos_y=prev_y
+		start_pos_z=prev_z
+		
+        #absolute coordinate correction
+		information.z=information.z-1.57
+		information.y=information.y-1.57
+		
+		
+		for i in range(100):
+			px = inter_lin(information.time, information.x, prev_x,start_pos_x)
+			py = inter_lin(information.time, information.y, prev_y,start_pos_y)
+			pz = inter_lin(information.time, information.z, prev_z,start_pos_z)	
 			to_joint_state(px,py,pz)
 			path.poses.append(to_pose_stamped([px, py, pz]))
 			path.header.frame_id="base_link"
@@ -88,6 +104,12 @@ if __name__ == '__main__':
 	prev_x=0
 	prev_y=0
 	prev_z=0
+	
+	start_pos_x=0
+	start_pos_y=0
+	start_pos_z=0
+	
+
 
 	rospy.init_node('jint', anonymous=True)
 

@@ -255,10 +255,10 @@
   "3217da37e7b93e31d3fd5f2778f26983")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<myjint-response>)))
   "Returns full string definition for message of type '<myjint-response>"
-  (cl:format cl:nil "string status~%~%~%"))
+  (cl:format cl:nil "string status~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'myjint-response)))
   "Returns full string definition for message of type 'myjint-response"
-  (cl:format cl:nil "string status~%~%~%"))
+  (cl:format cl:nil "string status~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <myjint-response>))
   (cl:+ 0
      4 (cl:length (cl:slot-value msg 'status))

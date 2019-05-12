@@ -1,7 +1,9 @@
 file(REMOVE_RECURSE
   "CMakeFiles/testbot_lab2_generate_messages_eus"
   "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/share/roseus/ros/testbot_lab2/srv/myjint.l"
+  "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/share/roseus/ros/testbot_lab2/srv/jint_control_srv.l"
   "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/share/roseus/ros/testbot_lab2/srv/myoint.l"
+  "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/share/roseus/ros/testbot_lab2/srv/oint_control_srv.l"
   "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/share/roseus/ros/testbot_lab2/manifest.l"
 )
 

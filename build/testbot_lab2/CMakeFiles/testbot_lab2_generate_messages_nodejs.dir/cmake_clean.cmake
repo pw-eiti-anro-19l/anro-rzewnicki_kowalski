@@ -1,7 +1,9 @@
 file(REMOVE_RECURSE
   "CMakeFiles/testbot_lab2_generate_messages_nodejs"
   "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/share/gennodejs/ros/testbot_lab2/srv/myjint.js"
+  "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/share/gennodejs/ros/testbot_lab2/srv/jint_control_srv.js"
   "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/share/gennodejs/ros/testbot_lab2/srv/myoint.js"
+  "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/share/gennodejs/ros/testbot_lab2/srv/oint_control_srv.js"
 )
 
 # Per-language clean rules from dependency scanning.

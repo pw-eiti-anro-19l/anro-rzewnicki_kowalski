@@ -54,7 +54,9 @@ CMAKE_BINARY_DIR = /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build
 include testbot_lab2/CMakeFiles/testbot_lab2_generate_messages_py.dir/progress.make
 
 testbot_lab2/CMakeFiles/testbot_lab2_generate_messages_py: /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/lib/python2.7/dist-packages/testbot_lab2/srv/_myjint.py
+testbot_lab2/CMakeFiles/testbot_lab2_generate_messages_py: /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/lib/python2.7/dist-packages/testbot_lab2/srv/_jint_control_srv.py
 testbot_lab2/CMakeFiles/testbot_lab2_generate_messages_py: /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/lib/python2.7/dist-packages/testbot_lab2/srv/_myoint.py
+testbot_lab2/CMakeFiles/testbot_lab2_generate_messages_py: /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/lib/python2.7/dist-packages/testbot_lab2/srv/_oint_control_srv.py
 testbot_lab2/CMakeFiles/testbot_lab2_generate_messages_py: /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/lib/python2.7/dist-packages/testbot_lab2/srv/__init__.py
 
 
@@ -63,20 +65,34 @@ testbot_lab2/CMakeFiles/testbot_lab2_generate_messages_py: /home/przewnic/Docume
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python code from SRV testbot_lab2/myjint"
 	cd /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build/testbot_lab2 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/myjint.srv -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/melodic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/melodic/share/geometry_msgs/cmake/../msg -p testbot_lab2 -o /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/lib/python2.7/dist-packages/testbot_lab2/srv
 
+/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/lib/python2.7/dist-packages/testbot_lab2/srv/_jint_control_srv.py: /opt/ros/melodic/lib/genpy/gensrv_py.py
+/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/lib/python2.7/dist-packages/testbot_lab2/srv/_jint_control_srv.py: /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/jint_control_srv.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python code from SRV testbot_lab2/jint_control_srv"
+	cd /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build/testbot_lab2 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/jint_control_srv.srv -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/melodic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/melodic/share/geometry_msgs/cmake/../msg -p testbot_lab2 -o /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/lib/python2.7/dist-packages/testbot_lab2/srv
+
 /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/lib/python2.7/dist-packages/testbot_lab2/srv/_myoint.py: /opt/ros/melodic/lib/genpy/gensrv_py.py
 /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/lib/python2.7/dist-packages/testbot_lab2/srv/_myoint.py: /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/myoint.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python code from SRV testbot_lab2/myoint"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python code from SRV testbot_lab2/myoint"
 	cd /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build/testbot_lab2 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/myoint.srv -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/melodic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/melodic/share/geometry_msgs/cmake/../msg -p testbot_lab2 -o /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/lib/python2.7/dist-packages/testbot_lab2/srv
+
+/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/lib/python2.7/dist-packages/testbot_lab2/srv/_oint_control_srv.py: /opt/ros/melodic/lib/genpy/gensrv_py.py
+/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/lib/python2.7/dist-packages/testbot_lab2/srv/_oint_control_srv.py: /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/oint_control_srv.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python code from SRV testbot_lab2/oint_control_srv"
+	cd /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build/testbot_lab2 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/oint_control_srv.srv -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/melodic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/melodic/share/geometry_msgs/cmake/../msg -p testbot_lab2 -o /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/lib/python2.7/dist-packages/testbot_lab2/srv
 
 /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/lib/python2.7/dist-packages/testbot_lab2/srv/__init__.py: /opt/ros/melodic/lib/genpy/genmsg_py.py
 /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/lib/python2.7/dist-packages/testbot_lab2/srv/__init__.py: /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/lib/python2.7/dist-packages/testbot_lab2/srv/_myjint.py
+/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/lib/python2.7/dist-packages/testbot_lab2/srv/__init__.py: /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/lib/python2.7/dist-packages/testbot_lab2/srv/_jint_control_srv.py
 /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/lib/python2.7/dist-packages/testbot_lab2/srv/__init__.py: /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/lib/python2.7/dist-packages/testbot_lab2/srv/_myoint.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python srv __init__.py for testbot_lab2"
+/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/lib/python2.7/dist-packages/testbot_lab2/srv/__init__.py: /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/lib/python2.7/dist-packages/testbot_lab2/srv/_oint_control_srv.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Python srv __init__.py for testbot_lab2"
 	cd /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build/testbot_lab2 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/lib/python2.7/dist-packages/testbot_lab2/srv --initpy
 
 testbot_lab2_generate_messages_py: testbot_lab2/CMakeFiles/testbot_lab2_generate_messages_py
 testbot_lab2_generate_messages_py: /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/lib/python2.7/dist-packages/testbot_lab2/srv/_myjint.py
+testbot_lab2_generate_messages_py: /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/lib/python2.7/dist-packages/testbot_lab2/srv/_jint_control_srv.py
 testbot_lab2_generate_messages_py: /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/lib/python2.7/dist-packages/testbot_lab2/srv/_myoint.py
+testbot_lab2_generate_messages_py: /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/lib/python2.7/dist-packages/testbot_lab2/srv/_oint_control_srv.py
 testbot_lab2_generate_messages_py: /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/lib/python2.7/dist-packages/testbot_lab2/srv/__init__.py
 testbot_lab2_generate_messages_py: testbot_lab2/CMakeFiles/testbot_lab2_generate_messages_py.dir/build.make
 

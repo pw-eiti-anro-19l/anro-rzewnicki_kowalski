@@ -167,6 +167,7 @@ class myjintResponse(genpy.Message):
   _type = "testbot_lab2/myjintResponse"
   _has_header = False #flag to mark the presence of a Header object
   _full_text = """string status
+
 """
   __slots__ = ['status']
   _slot_types = ['string']

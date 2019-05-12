@@ -158,6 +158,7 @@ float64 time
 string type
 ---
 string status
+
 ")
 
 (setf (get testbot_lab2::myjintResponse :md5sum-) "3217da37e7b93e31d3fd5f2778f26983")
@@ -170,6 +171,7 @@ float64 time
 string type
 ---
 string status
+
 ")
 
 

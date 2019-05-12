@@ -1,7 +1,7 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
 messages_str = ""
-services_str = "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/myjint.srv;/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/myoint.srv"
+services_str = "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/myjint.srv;/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/myoint.srv;/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/jint_control_srv.srv;/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/oint_control_srv.srv"
 pkg_name = "testbot_lab2"
 dependencies_str = "std_msgs;sensor_msgs"
 langs = "gencpp;geneus;genlisp;gennodejs;genpy"

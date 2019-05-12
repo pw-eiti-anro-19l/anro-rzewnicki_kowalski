@@ -41,6 +41,8 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/testbot_lab2/srv" TYPE FILE FILES
     "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/myjint.srv"
     "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/myoint.srv"
+    "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/jint_control_srv.srv"
+    "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/oint_control_srv.srv"
     )
 endif()
 

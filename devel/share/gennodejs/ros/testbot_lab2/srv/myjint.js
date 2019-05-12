@@ -219,6 +219,7 @@ class myjintResponse {
     return `
     string status
     
+    
     `;
   }
 
