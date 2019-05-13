@@ -30,7 +30,7 @@ def nonkdl_kinematics(information):
     rotation_z = rotation_matrix(-information.position[1], (0, 0, 1))
     concatenated.append( concatenate_matrices(trans_z, rotation_z, trans_x, rotation_x))
 
- # drugi stopien
+    # drugi stopien
     trans_x = translation_matrix((dh[1][0], 0, 0))
     trans_z = translation_matrix((0, 0, 0))
     rotation_x = rotation_matrix(dh[1][2], (1, 0, 0))

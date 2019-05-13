@@ -61,16 +61,7 @@ def time_ctrl(start_pos,target_pos,prev_pos,acc):
 			return int(1/pperiod)
 			
 
-
-
-
-def cublic_lin(time,target_pos,prev_pos):
-	#todo -------------------------------------------------------------------------
-	#return (1- time)*prev_pos + time*target_pos + time(1-time)(a(1-time)+ b*time)
-	return
-
 def interpolation(information):
-#todo check data
 	global prev_x
 	global prev_y
 	global prev_z
@@ -102,7 +93,7 @@ def interpolation(information):
 			px = inter_lin((int(information.time*60)-1), information.x, prev_x,start_pos_x)
 			py = inter_lin((int(information.time*60)-1), information.y, prev_y,start_pos_y)
 			pz = inter_lin((int(information.time*60)-1), information.z, prev_z,start_pos_z)
-
+			rospy.loginfo( [px,py,pz])
 			to_joint_state(px,py,pz)
 			path.poses.append(to_pose_stamped([px, py, pz]))
 			path.header.frame_id="base_link"
@@ -125,8 +116,7 @@ def interpolation(information):
 		rate = rospy.Rate(60) # rate if too fast used with rate.sleep() at the end of loop
 		
         #absolute coordinate correction
-	
-		
+
 		for i in range(int(samples)):
 			px = inter_lin(samples, information.x, prev_x,start_pos_x)
 			py = inter_lin(samples, information.y, prev_y,start_pos_y)
@@ -167,12 +157,10 @@ if __name__ == '__main__':
 	
 
 	rospy.init_node('jint', anonymous=True)
-
-	print os.path.dirname(os.path.realpath(__file__))
   
 	pub = rospy.Publisher('joint_states', JointState, queue_size = 1)
 	ppub = rospy.Publisher('path', Path, queue_size = 1)
-	#rospy.wait_for_service('jint')
+
 	input_data = rospy.Service('jint_control_srv', jint_control_srv, interpolation)
 	to_joint_state(0,0,0)
 	rospy.loginfo( 'Ready -------------service jint---------------')

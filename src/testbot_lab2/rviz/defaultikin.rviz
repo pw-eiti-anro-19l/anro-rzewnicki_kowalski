@@ -6,7 +6,6 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
-        - /Pose1
       Splitter Ratio: 0.5
     Tree Height: 549
   - Class: rviz/Selection
@@ -58,30 +57,62 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
+        base_link:
+          Value: true
+        link1:
+          Value: true
+        link2:
+          Value: true
+        link3:
+          Value: true
       Marker Scale: 1
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: true
       Tree:
-        {}
+        base_link:
+          link1:
+            link2:
+              link3:
+                {}
       Update Interval: 0
       Value: true
     - Alpha: 1
       Class: rviz/RobotModel
       Collision Enabled: false
-      Enabled: false
+      Enabled: true
       Links:
         All Links Enabled: true
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
+        base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        link1:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        link2:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        link3:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
       Name: RobotModel
       Robot Description: robot_description
       TF Prefix: ""
       Update Interval: 0
-      Value: false
+      Value: true
       Visual Enabled: true
     - Alpha: 1
       Buffer Length: 1
@@ -107,17 +138,17 @@ Visualization Manager:
       Unreliable: false
       Value: true
     - Alpha: 1
-      Axes Length: 0.20000000298023224
+      Axes Length: 1
       Axes Radius: 0.10000000149011612
       Class: rviz/Pose
       Color: 255; 25; 0
       Enabled: true
-      Head Length: 0.30000001192092896
-      Head Radius: 0.10000000149011612
+      Head Length: 0.029999999329447746
+      Head Radius: 0.05000000074505806
       Name: Pose
-      Shaft Length: 1
+      Shaft Length: 0.05000000074505806
       Shaft Radius: 0.05000000074505806
-      Shape: Axes
+      Shape: Arrow
       Topic: /pose_stamped
       Unreliable: false
       Value: true
@@ -149,7 +180,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 5.792405605316162
+      Distance: 3.0817792415618896
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -164,10 +195,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.7603985667228699
+      Pitch: 0.48539838194847107
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 1.1953935623168945
+      Yaw: 5.453586101531982
     Saved: ~
 Window Geometry:
   Displays:
@@ -186,4 +217,4 @@ Window Geometry:
     collapsed: true
   Width: 1200
   X: 720
-  Y: 27
+  Y: 43

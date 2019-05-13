@@ -3,41 +3,49 @@
 import numpy as np
 import rospy
 import os
-import math
+from math import sin,acos, atan2, sqrt,pi, asin
 from tf.transformations import *
 from sensor_msgs.msg import JointState
 from geometry_msgs.msg import PoseStamped
-from testbot_lab2.srv import myjint
+
 
 
 
 def to_joint_state(px,py,pz):
+	global pub
 	js = JointState()
-	js.name.append('joint1')
-	js.name.append('joint2')
-	js.name.append('joint3')
-	js.position.resize(3)
+	js.name.append('base_link1')
+	js.name.append('link1_link2')
+	js.name.append('link2_link3')
 	js.header.stamp = rospy.Time.now()
-	js.position[0] = px
-	js.position[1] = py
-	js.position[2] = pz
-	joint.publish(js)
-
-
-def interpolation(information):
+	js.position.append(pz)
+	js.position.append(py)
+	js.position.append(px)
+	pub.publish(js)
 
 
 
+def ikin_handler(information):
+	x, y, z = information.pose.position.x, information.pose.position.y,  information.pose.position.z
+
+	q3 = dh[0][1] - z
+	rospy.loginfo( q3)
+	c2 = ( ( x**2 + y**2 - dh[1][0]**2 - dh[2][0]**2 ) / 2*dh[1][0]*dh[2][0] )
+	s2 = sqrt( 1 - c2**2)
+	q2 = acos( c2 ) 
+	rospy.loginfo( q2)
+	#s1 = (dh[2][0]*s2*x + (dh[1][0] + dh[2][0]*c2)*y)/ ( (dh[2][0]*s2)^2 + (dh[1][0] + dh[2][0]*c2)^2)
+	#c1 = ((dh[1][0] + dh[2][0]*c2)*x - dh[2][0]*s2*y)/ ( (dh[2][0]*s2)^2 + (dh[1][0] + dh[2][0]*c2)^2)
+	q1 = atan2((dh[2][0]*s2*x+(dh[1][0] + dh[2][0]*c2)*y), ((dh[1][0] + dh[2][0]*c2)*x - dh[2][0]*s2*y) )
+	rospy.loginfo( q1)
+	to_joint_state(q3,q2,q1)
 
 if __name__ == '__main__':
-
-
 	rospy.init_node('ikin', anonymous=True)
 
 	print os.path.dirname(os.path.realpath(__file__))
-  
-	pub = rospy.Publisher('jointState', JointState, queue_size = 10)
-	rospy.wait_for_service('myjint')
-	input_data = rospy.Service('jint_service', myjint , interpolation)
+	dh = np.loadtxt(os.path.dirname(os.path.realpath(__file__)) +'/dh.txt',dtype = 'd', delimiter=' ')
+	pub = rospy.Publisher('joint_states', JointState, queue_size = 10)
+	rospy.Subscriber('pose_stamped', PoseStamped, ikin_handler)
 	rospy.spin()
 

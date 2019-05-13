@@ -29,11 +29,9 @@ def to_path(poseadd,path):
 	path.poses.append(poseadd)
 	return path
 
-def inter_lin(bits,target_pos,prev_pos,start_pos):
-    #error=abs(start_pos-target_pos)
-	next_pos = prev_pos + ((target_pos-start_pos)/bits)
-	#start_time = time
-	return next_pos
+def inter_lin(bits, target_pos, prev_pos, start_pos):
+	return (prev_pos + ((target_pos-start_pos)/bits))
+
 
 def time_ctrl(start_pos,target_pos,prev_pos,acc):
 	global pperiod
@@ -78,14 +76,16 @@ def interpolation(information):
 
 	if(information.type == 'linear'):
 		samples=information.time*60
-		information.z=information.z-3.14
-		information.y=information.y-3.14
+		#information.z=information.z-3.14
+		#information.y=information.y-3.14
 		rate = rospy.Rate(60) # rate if too fast used with rate.sleep() at the end of loop
 		for i in range(int(samples)):
+			rospy.loginfo( 'information')
+			rospy.loginfo( [information.x, information.y, information.z])
 			px = inter_lin((int(information.time*60)-1), information.x, prev_x,start_pos_x)
 			py = inter_lin((int(information.time*60)-1), information.y, prev_y,start_pos_y)
 			pz = inter_lin((int(information.time*60)-1), information.z, prev_z,start_pos_z)
-
+			rospy.loginfo( [px, py , pz])
 			prx = inter_lin(information.time, information.rx, prev_rx,start_pos_rx)
 			pry = inter_lin(information.time, information.ry, prev_ry,start_pos_ry)
 			prz = inter_lin(information.time, information.rz, prev_rz,start_pos_rz)
@@ -153,26 +153,25 @@ def interpolation(information):
 		start_pos_rz=prev_rz
 		return 'ok'
 	else:
-		#information.status = 'wrong type of interpolation'
 		return 'wrong type of interpolation'
 
 
 
 
 if __name__ == '__main__':
-	prev_x=0
+	prev_x=0.3
 	prev_y=0
-	prev_z=0
+	prev_z=0.2
 	prev_rx=0
 	prev_ry=0
 	prev_rz=0
 	pperiod=0.1
-	start_pos_x=0.0
-	start_pos_y=0.0
-	start_pos_z=0.0
-	start_pos_rx=0.0
-	start_pos_ry=0.0
-	start_pos_rz=0.0
+	start_pos_x=0.3
+	start_pos_y=0
+	start_pos_z=0.2
+	start_pos_rx=0
+	start_pos_ry=0
+	start_pos_rz=0
 	rospy.init_node('oint', anonymous=True)
   
 	spub = rospy.Publisher('pose_stamped', PoseStamped, queue_size = 1)
