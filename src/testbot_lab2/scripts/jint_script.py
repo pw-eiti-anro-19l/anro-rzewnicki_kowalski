@@ -82,9 +82,9 @@ def interpolation(information):
 	path = Path()
 	if(information.x > 0.38) :
 		return 'Wrong value - prysmatic x > 0.38'
-	if( information.y > 3.14):
+	if( information.y > 6.28):
 		return 'Wrong value - rotation a2 y > 3.14'
- 	if( information.z >3.14 ):
+ 	if( information.z >6.28 ):
 		return 'Wrong value - rotation a1 z > 3.13'
 	if(information.time <= 0):
 		return 'Wrong time value:  must be greater than 0'
@@ -95,8 +95,8 @@ def interpolation(information):
 		rate = rospy.Rate(60) # rate if too fast used with rate.sleep() at the end of loop
 		
         #absolute coordinate correction
-		information.z=information.z-1.57
-		information.y=information.y-1.57
+		information.z=information.z-3.14
+		information.y=information.y-3.14
 		
 		for i in range(int(samples)):
 			px = inter_lin((int(information.time*60)-1), information.x, prev_x,start_pos_x)
@@ -132,7 +132,7 @@ def interpolation(information):
 			py = inter_lin(samples, information.y, prev_y,start_pos_y)
 			pz = inter_lin(samples, information.z, prev_z,start_pos_z)
 
-			rate=rospy.Rate(time_ctrl(0, samples, i, information.time))	
+			rate=rospy.Rate(time_ctrl(start_pos_y, information.y, prev_y, information.time))	
 
 			to_joint_state(px,py,pz)
 			path.poses.append(to_pose_stamped([px, py, pz]))

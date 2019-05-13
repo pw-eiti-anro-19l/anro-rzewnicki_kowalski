@@ -78,8 +78,8 @@ def interpolation(information):
 
 	if(information.type == 'linear'):
 		samples=information.time*60
-		information.z=information.z-1.57
-		information.y=information.y-1.57
+		information.z=information.z-3.14
+		information.y=information.y-3.14
 		rate = rospy.Rate(60) # rate if too fast used with rate.sleep() at the end of loop
 		for i in range(int(samples)):
 			px = inter_lin((int(information.time*60)-1), information.x, prev_x,start_pos_x)
