@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<robot name="test_robot" xmlns:="http://www.ros.org/wiki/xacro">
+	<xacro:property name="filename" value="$(find testbot_lab2)/params.yaml"/>
+        <xacro:property name="paramrs" value="${load_yaml(filename)}"/>
+
+    <material name="white">
+      <color rgba="1 1 1 1"/>
+    </material>
+
+    <link name="base">
+      <visual>
+        <geometry>
+		<box size="0.2 0.2 0.2" />
+        </geometry>
+          <orgin xyz="0 0 0.05"/>
+	  <material name="white"/>
+      </visual>
+    </link>
+
+    <link name="link1">
+      <visual>
+        <geometry>
+		<box size="0.2 0.2 0.2" />
+        </geometry>
+	<material name="white"/>
+
+          <orgin xyz="0 0 0.05"/>
+      </visual>
+    </link>
+
+    <link name="link2">
+      <visual>
+        <geometry>
+		<box size="0.2 0.2 0.2" />
+        </geometry>
+	<material name="white"/>
+          <orgin xyz="0 0 0.05"/>
+      </visual>
+    </link>
+
+    <link name="link3">
+      <visual>
+        <geometry>
+		<box size="0.2 0.2 0.2" />
+        </geometry>
+	<material name="white"/>
+          <orgin xyz="0 0 0.05"/>
+      </visual>
+    </link>
+
+
+
+   <joint name="joint1" type="revolute">
+      <parent link="base"/>
+      <child link="link1"/>
+      <origin xyz="0 0 0" rpy="${param1}" />
+      <axis xyz="0 0 1" />
+      <limit effort="1" lower="1" upper="1" velocity="1"/>
+   </joint>
+
+   <joint name="joint2" type="revolute">
+      <parent link="link1"/>
+      <child link="link2"/>
+      <origin xyz="1 0 0" rpy="${param2}" />
+      <axis xyz="0 0 1" />
+      <limit effort="1" lower="1" upper="1" velocity="1"/>
+   </joint>
+ 
+   <joint name="joint3" type="prismatic">
+      <parent link="link2"/>
+      <child link="link3"/>
+      <origin xyz="1 0 1" rpy="${param3}" />
+      <axis xyz="0 0 1"/>  
+      <limit effort="1" lower="1" upper="1" velocity="1"/>
+</joint>
+ 
+
+
+ </robot>

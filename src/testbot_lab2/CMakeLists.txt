@@ -11,8 +11,8 @@ find_package(catkin REQUIRED COMPONENTS
 )
 add_service_files(DIRECTORY srv
   FILES
-  myjint.srv
-  myoint.srv
+  jint_control_srv.srv
+  oint_control_srv.srv
 )
 generate_messages(
   DEPENDENCIES
