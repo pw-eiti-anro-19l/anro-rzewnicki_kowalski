@@ -1,7 +1,9 @@
 file(REMOVE_RECURSE
   "CMakeFiles/testbot_lab2_generate_messages_py"
   "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/lib/python2.7/dist-packages/testbot_lab2/srv/_myjint.py"
+  "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/lib/python2.7/dist-packages/testbot_lab2/srv/_jint_control_srv.py"
   "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/lib/python2.7/dist-packages/testbot_lab2/srv/_myoint.py"
+  "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/lib/python2.7/dist-packages/testbot_lab2/srv/_oint_control_srv.py"
   "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/lib/python2.7/dist-packages/testbot_lab2/srv/__init__.py"
 )
 

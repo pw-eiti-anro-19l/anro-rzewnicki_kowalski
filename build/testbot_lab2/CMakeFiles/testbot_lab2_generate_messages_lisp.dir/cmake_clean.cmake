@@ -1,7 +1,9 @@
 file(REMOVE_RECURSE
   "CMakeFiles/testbot_lab2_generate_messages_lisp"
   "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/share/common-lisp/ros/testbot_lab2/srv/myjint.lisp"
+  "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/share/common-lisp/ros/testbot_lab2/srv/jint_control_srv.lisp"
   "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/share/common-lisp/ros/testbot_lab2/srv/myoint.lisp"
+  "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/share/common-lisp/ros/testbot_lab2/srv/oint_control_srv.lisp"
 )
 
 # Per-language clean rules from dependency scanning.

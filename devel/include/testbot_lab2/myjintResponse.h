@@ -139,6 +139,7 @@ struct Definition< ::testbot_lab2::myjintResponse_<ContainerAllocator> >
   static const char* value()
   {
     return "string status\n"
+"\n"
 ;
   }
 

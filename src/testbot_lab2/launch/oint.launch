@@ -1,5 +1,5 @@
 <launch>
-    <arg name="rvizconfig" default="$(find testbot_lab2)/rviz/default.rviz" />
+    <arg name="rvizconfig" default="$(find testbot_lab2)/rviz/defaultoint.rviz" />
 
     <node name="oint" pkg="testbot_lab2" type="oint_script.py" output="screen"/>
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />

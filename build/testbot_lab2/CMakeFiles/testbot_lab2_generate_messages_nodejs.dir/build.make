@@ -54,7 +54,9 @@ CMAKE_BINARY_DIR = /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build
 include testbot_lab2/CMakeFiles/testbot_lab2_generate_messages_nodejs.dir/progress.make
 
 testbot_lab2/CMakeFiles/testbot_lab2_generate_messages_nodejs: /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/share/gennodejs/ros/testbot_lab2/srv/myjint.js
+testbot_lab2/CMakeFiles/testbot_lab2_generate_messages_nodejs: /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/share/gennodejs/ros/testbot_lab2/srv/jint_control_srv.js
 testbot_lab2/CMakeFiles/testbot_lab2_generate_messages_nodejs: /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/share/gennodejs/ros/testbot_lab2/srv/myoint.js
+testbot_lab2/CMakeFiles/testbot_lab2_generate_messages_nodejs: /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/share/gennodejs/ros/testbot_lab2/srv/oint_control_srv.js
 
 
 /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/share/gennodejs/ros/testbot_lab2/srv/myjint.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
@@ -62,14 +64,26 @@ testbot_lab2/CMakeFiles/testbot_lab2_generate_messages_nodejs: /home/przewnic/Do
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from testbot_lab2/myjint.srv"
 	cd /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build/testbot_lab2 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/myjint.srv -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/melodic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/melodic/share/geometry_msgs/cmake/../msg -p testbot_lab2 -o /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/share/gennodejs/ros/testbot_lab2/srv
 
+/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/share/gennodejs/ros/testbot_lab2/srv/jint_control_srv.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
+/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/share/gennodejs/ros/testbot_lab2/srv/jint_control_srv.js: /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/jint_control_srv.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Javascript code from testbot_lab2/jint_control_srv.srv"
+	cd /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build/testbot_lab2 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/jint_control_srv.srv -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/melodic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/melodic/share/geometry_msgs/cmake/../msg -p testbot_lab2 -o /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/share/gennodejs/ros/testbot_lab2/srv
+
 /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/share/gennodejs/ros/testbot_lab2/srv/myoint.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
 /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/share/gennodejs/ros/testbot_lab2/srv/myoint.js: /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/myoint.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Javascript code from testbot_lab2/myoint.srv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Javascript code from testbot_lab2/myoint.srv"
 	cd /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build/testbot_lab2 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/myoint.srv -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/melodic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/melodic/share/geometry_msgs/cmake/../msg -p testbot_lab2 -o /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/share/gennodejs/ros/testbot_lab2/srv
+
+/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/share/gennodejs/ros/testbot_lab2/srv/oint_control_srv.js: /opt/ros/melodic/lib/gennodejs/gen_nodejs.py
+/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/share/gennodejs/ros/testbot_lab2/srv/oint_control_srv.js: /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/oint_control_srv.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Javascript code from testbot_lab2/oint_control_srv.srv"
+	cd /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build/testbot_lab2 && ../catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/oint_control_srv.srv -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/melodic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/melodic/share/geometry_msgs/cmake/../msg -p testbot_lab2 -o /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/share/gennodejs/ros/testbot_lab2/srv
 
 testbot_lab2_generate_messages_nodejs: testbot_lab2/CMakeFiles/testbot_lab2_generate_messages_nodejs
 testbot_lab2_generate_messages_nodejs: /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/share/gennodejs/ros/testbot_lab2/srv/myjint.js
+testbot_lab2_generate_messages_nodejs: /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/share/gennodejs/ros/testbot_lab2/srv/jint_control_srv.js
 testbot_lab2_generate_messages_nodejs: /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/share/gennodejs/ros/testbot_lab2/srv/myoint.js
+testbot_lab2_generate_messages_nodejs: /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/share/gennodejs/ros/testbot_lab2/srv/oint_control_srv.js
 testbot_lab2_generate_messages_nodejs: testbot_lab2/CMakeFiles/testbot_lab2_generate_messages_nodejs.dir/build.make
 
 .PHONY : testbot_lab2_generate_messages_nodejs

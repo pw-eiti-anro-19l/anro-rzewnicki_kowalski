@@ -54,7 +54,9 @@ CMAKE_BINARY_DIR = /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build
 include testbot_lab2/CMakeFiles/testbot_lab2_generate_messages_cpp.dir/progress.make
 
 testbot_lab2/CMakeFiles/testbot_lab2_generate_messages_cpp: /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/include/testbot_lab2/myjint.h
+testbot_lab2/CMakeFiles/testbot_lab2_generate_messages_cpp: /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/include/testbot_lab2/jint_control_srv.h
 testbot_lab2/CMakeFiles/testbot_lab2_generate_messages_cpp: /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/include/testbot_lab2/myoint.h
+testbot_lab2/CMakeFiles/testbot_lab2_generate_messages_cpp: /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/include/testbot_lab2/oint_control_srv.h
 
 
 /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/include/testbot_lab2/myjint.h: /opt/ros/melodic/lib/gencpp/gen_cpp.py
@@ -64,16 +66,32 @@ testbot_lab2/CMakeFiles/testbot_lab2_generate_messages_cpp: /home/przewnic/Docum
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from testbot_lab2/myjint.srv"
 	cd /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2 && /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/myjint.srv -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/melodic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/melodic/share/geometry_msgs/cmake/../msg -p testbot_lab2 -o /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/include/testbot_lab2 -e /opt/ros/melodic/share/gencpp/cmake/..
 
+/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/include/testbot_lab2/jint_control_srv.h: /opt/ros/melodic/lib/gencpp/gen_cpp.py
+/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/include/testbot_lab2/jint_control_srv.h: /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/jint_control_srv.srv
+/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/include/testbot_lab2/jint_control_srv.h: /opt/ros/melodic/share/gencpp/msg.h.template
+/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/include/testbot_lab2/jint_control_srv.h: /opt/ros/melodic/share/gencpp/srv.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from testbot_lab2/jint_control_srv.srv"
+	cd /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2 && /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/jint_control_srv.srv -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/melodic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/melodic/share/geometry_msgs/cmake/../msg -p testbot_lab2 -o /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/include/testbot_lab2 -e /opt/ros/melodic/share/gencpp/cmake/..
+
 /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/include/testbot_lab2/myoint.h: /opt/ros/melodic/lib/gencpp/gen_cpp.py
 /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/include/testbot_lab2/myoint.h: /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/myoint.srv
 /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/include/testbot_lab2/myoint.h: /opt/ros/melodic/share/gencpp/msg.h.template
 /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/include/testbot_lab2/myoint.h: /opt/ros/melodic/share/gencpp/srv.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from testbot_lab2/myoint.srv"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating C++ code from testbot_lab2/myoint.srv"
 	cd /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2 && /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/myoint.srv -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/melodic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/melodic/share/geometry_msgs/cmake/../msg -p testbot_lab2 -o /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/include/testbot_lab2 -e /opt/ros/melodic/share/gencpp/cmake/..
+
+/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/include/testbot_lab2/oint_control_srv.h: /opt/ros/melodic/lib/gencpp/gen_cpp.py
+/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/include/testbot_lab2/oint_control_srv.h: /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/oint_control_srv.srv
+/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/include/testbot_lab2/oint_control_srv.h: /opt/ros/melodic/share/gencpp/msg.h.template
+/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/include/testbot_lab2/oint_control_srv.h: /opt/ros/melodic/share/gencpp/srv.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating C++ code from testbot_lab2/oint_control_srv.srv"
+	cd /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2 && /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build/catkin_generated/env_cached.sh /usr/bin/python2 /opt/ros/melodic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/oint_control_srv.srv -Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/melodic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/melodic/share/geometry_msgs/cmake/../msg -p testbot_lab2 -o /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/include/testbot_lab2 -e /opt/ros/melodic/share/gencpp/cmake/..
 
 testbot_lab2_generate_messages_cpp: testbot_lab2/CMakeFiles/testbot_lab2_generate_messages_cpp
 testbot_lab2_generate_messages_cpp: /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/include/testbot_lab2/myjint.h
+testbot_lab2_generate_messages_cpp: /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/include/testbot_lab2/jint_control_srv.h
 testbot_lab2_generate_messages_cpp: /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/include/testbot_lab2/myoint.h
+testbot_lab2_generate_messages_cpp: /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel/include/testbot_lab2/oint_control_srv.h
 testbot_lab2_generate_messages_cpp: testbot_lab2/CMakeFiles/testbot_lab2_generate_messages_cpp.dir/build.make
 
 .PHONY : testbot_lab2_generate_messages_cpp

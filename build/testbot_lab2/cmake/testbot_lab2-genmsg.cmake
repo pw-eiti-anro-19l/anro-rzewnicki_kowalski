@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "testbot_lab2: 0 messages, 2 services")
+message(STATUS "testbot_lab2: 0 messages, 4 services")
 
 set(MSG_I_FLAGS "-Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg;-Isensor_msgs:/opt/ros/melodic/share/sensor_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/melodic/share/geometry_msgs/cmake/../msg")
 
@@ -17,9 +17,19 @@ add_custom_target(testbot_lab2_generate_messages ALL)
 
 
 
+get_filename_component(_filename "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/oint_control_srv.srv" NAME_WE)
+add_custom_target(_testbot_lab2_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "testbot_lab2" "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/oint_control_srv.srv" ""
+)
+
 get_filename_component(_filename "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/myjint.srv" NAME_WE)
 add_custom_target(_testbot_lab2_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "testbot_lab2" "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/myjint.srv" ""
+)
+
+get_filename_component(_filename "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/jint_control_srv.srv" NAME_WE)
+add_custom_target(_testbot_lab2_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "testbot_lab2" "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/jint_control_srv.srv" ""
 )
 
 get_filename_component(_filename "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/myoint.srv" NAME_WE)
@@ -42,7 +52,19 @@ _generate_srv_cpp(testbot_lab2
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/testbot_lab2
 )
 _generate_srv_cpp(testbot_lab2
+  "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/jint_control_srv.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/testbot_lab2
+)
+_generate_srv_cpp(testbot_lab2
   "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/myoint.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/testbot_lab2
+)
+_generate_srv_cpp(testbot_lab2
+  "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/oint_control_srv.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/testbot_lab2
@@ -60,7 +82,11 @@ add_custom_target(testbot_lab2_generate_messages_cpp
 add_dependencies(testbot_lab2_generate_messages testbot_lab2_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/oint_control_srv.srv" NAME_WE)
+add_dependencies(testbot_lab2_generate_messages_cpp _testbot_lab2_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/myjint.srv" NAME_WE)
+add_dependencies(testbot_lab2_generate_messages_cpp _testbot_lab2_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/jint_control_srv.srv" NAME_WE)
 add_dependencies(testbot_lab2_generate_messages_cpp _testbot_lab2_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/myoint.srv" NAME_WE)
 add_dependencies(testbot_lab2_generate_messages_cpp _testbot_lab2_generate_messages_check_deps_${_filename})
@@ -83,7 +109,19 @@ _generate_srv_eus(testbot_lab2
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/testbot_lab2
 )
 _generate_srv_eus(testbot_lab2
+  "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/jint_control_srv.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/testbot_lab2
+)
+_generate_srv_eus(testbot_lab2
   "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/myoint.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/testbot_lab2
+)
+_generate_srv_eus(testbot_lab2
+  "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/oint_control_srv.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/testbot_lab2
@@ -101,7 +139,11 @@ add_custom_target(testbot_lab2_generate_messages_eus
 add_dependencies(testbot_lab2_generate_messages testbot_lab2_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/oint_control_srv.srv" NAME_WE)
+add_dependencies(testbot_lab2_generate_messages_eus _testbot_lab2_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/myjint.srv" NAME_WE)
+add_dependencies(testbot_lab2_generate_messages_eus _testbot_lab2_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/jint_control_srv.srv" NAME_WE)
 add_dependencies(testbot_lab2_generate_messages_eus _testbot_lab2_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/myoint.srv" NAME_WE)
 add_dependencies(testbot_lab2_generate_messages_eus _testbot_lab2_generate_messages_check_deps_${_filename})
@@ -124,7 +166,19 @@ _generate_srv_lisp(testbot_lab2
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/testbot_lab2
 )
 _generate_srv_lisp(testbot_lab2
+  "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/jint_control_srv.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/testbot_lab2
+)
+_generate_srv_lisp(testbot_lab2
   "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/myoint.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/testbot_lab2
+)
+_generate_srv_lisp(testbot_lab2
+  "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/oint_control_srv.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/testbot_lab2
@@ -142,7 +196,11 @@ add_custom_target(testbot_lab2_generate_messages_lisp
 add_dependencies(testbot_lab2_generate_messages testbot_lab2_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/oint_control_srv.srv" NAME_WE)
+add_dependencies(testbot_lab2_generate_messages_lisp _testbot_lab2_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/myjint.srv" NAME_WE)
+add_dependencies(testbot_lab2_generate_messages_lisp _testbot_lab2_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/jint_control_srv.srv" NAME_WE)
 add_dependencies(testbot_lab2_generate_messages_lisp _testbot_lab2_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/myoint.srv" NAME_WE)
 add_dependencies(testbot_lab2_generate_messages_lisp _testbot_lab2_generate_messages_check_deps_${_filename})
@@ -165,7 +223,19 @@ _generate_srv_nodejs(testbot_lab2
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/testbot_lab2
 )
 _generate_srv_nodejs(testbot_lab2
+  "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/jint_control_srv.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/testbot_lab2
+)
+_generate_srv_nodejs(testbot_lab2
   "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/myoint.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/testbot_lab2
+)
+_generate_srv_nodejs(testbot_lab2
+  "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/oint_control_srv.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/testbot_lab2
@@ -183,7 +253,11 @@ add_custom_target(testbot_lab2_generate_messages_nodejs
 add_dependencies(testbot_lab2_generate_messages testbot_lab2_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/oint_control_srv.srv" NAME_WE)
+add_dependencies(testbot_lab2_generate_messages_nodejs _testbot_lab2_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/myjint.srv" NAME_WE)
+add_dependencies(testbot_lab2_generate_messages_nodejs _testbot_lab2_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/jint_control_srv.srv" NAME_WE)
 add_dependencies(testbot_lab2_generate_messages_nodejs _testbot_lab2_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/myoint.srv" NAME_WE)
 add_dependencies(testbot_lab2_generate_messages_nodejs _testbot_lab2_generate_messages_check_deps_${_filename})
@@ -206,7 +280,19 @@ _generate_srv_py(testbot_lab2
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/testbot_lab2
 )
 _generate_srv_py(testbot_lab2
+  "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/jint_control_srv.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/testbot_lab2
+)
+_generate_srv_py(testbot_lab2
   "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/myoint.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/testbot_lab2
+)
+_generate_srv_py(testbot_lab2
+  "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/oint_control_srv.srv"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/testbot_lab2
@@ -224,7 +310,11 @@ add_custom_target(testbot_lab2_generate_messages_py
 add_dependencies(testbot_lab2_generate_messages testbot_lab2_generate_messages_py)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/oint_control_srv.srv" NAME_WE)
+add_dependencies(testbot_lab2_generate_messages_py _testbot_lab2_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/myjint.srv" NAME_WE)
+add_dependencies(testbot_lab2_generate_messages_py _testbot_lab2_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/jint_control_srv.srv" NAME_WE)
 add_dependencies(testbot_lab2_generate_messages_py _testbot_lab2_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/src/testbot_lab2/srv/myoint.srv" NAME_WE)
 add_dependencies(testbot_lab2_generate_messages_py _testbot_lab2_generate_messages_check_deps_${_filename})

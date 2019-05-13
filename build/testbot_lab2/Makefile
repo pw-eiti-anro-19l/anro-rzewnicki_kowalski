@@ -66,17 +66,6 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -112,6 +101,28 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
@@ -123,17 +134,6 @@ install/strip/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -241,6 +241,21 @@ testbot_lab2_geneus: testbot_lab2/CMakeFiles/testbot_lab2_geneus.dir/rule
 testbot_lab2_geneus/fast:
 	cd /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build && $(MAKE) -f testbot_lab2/CMakeFiles/testbot_lab2_geneus.dir/build.make testbot_lab2/CMakeFiles/testbot_lab2_geneus.dir/build
 .PHONY : testbot_lab2_geneus/fast
+
+# Convenience name for target.
+testbot_lab2/CMakeFiles/testbot_lab2_gencpp.dir/rule:
+	cd /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build && $(MAKE) -f CMakeFiles/Makefile2 testbot_lab2/CMakeFiles/testbot_lab2_gencpp.dir/rule
+.PHONY : testbot_lab2/CMakeFiles/testbot_lab2_gencpp.dir/rule
+
+# Convenience name for target.
+testbot_lab2_gencpp: testbot_lab2/CMakeFiles/testbot_lab2_gencpp.dir/rule
+
+.PHONY : testbot_lab2_gencpp
+
+# fast build rule for target.
+testbot_lab2_gencpp/fast:
+	cd /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build && $(MAKE) -f testbot_lab2/CMakeFiles/testbot_lab2_gencpp.dir/build.make testbot_lab2/CMakeFiles/testbot_lab2_gencpp.dir/build
+.PHONY : testbot_lab2_gencpp/fast
 
 # Convenience name for target.
 testbot_lab2/CMakeFiles/tf_generate_messages_nodejs.dir/rule:
@@ -618,6 +633,51 @@ actionlib_generate_messages_lisp/fast:
 .PHONY : actionlib_generate_messages_lisp/fast
 
 # Convenience name for target.
+testbot_lab2/CMakeFiles/testbot_lab2_genpy.dir/rule:
+	cd /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build && $(MAKE) -f CMakeFiles/Makefile2 testbot_lab2/CMakeFiles/testbot_lab2_genpy.dir/rule
+.PHONY : testbot_lab2/CMakeFiles/testbot_lab2_genpy.dir/rule
+
+# Convenience name for target.
+testbot_lab2_genpy: testbot_lab2/CMakeFiles/testbot_lab2_genpy.dir/rule
+
+.PHONY : testbot_lab2_genpy
+
+# fast build rule for target.
+testbot_lab2_genpy/fast:
+	cd /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build && $(MAKE) -f testbot_lab2/CMakeFiles/testbot_lab2_genpy.dir/build.make testbot_lab2/CMakeFiles/testbot_lab2_genpy.dir/build
+.PHONY : testbot_lab2_genpy/fast
+
+# Convenience name for target.
+testbot_lab2/CMakeFiles/testbot_lab2_generate_messages_eus.dir/rule:
+	cd /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build && $(MAKE) -f CMakeFiles/Makefile2 testbot_lab2/CMakeFiles/testbot_lab2_generate_messages_eus.dir/rule
+.PHONY : testbot_lab2/CMakeFiles/testbot_lab2_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+testbot_lab2_generate_messages_eus: testbot_lab2/CMakeFiles/testbot_lab2_generate_messages_eus.dir/rule
+
+.PHONY : testbot_lab2_generate_messages_eus
+
+# fast build rule for target.
+testbot_lab2_generate_messages_eus/fast:
+	cd /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build && $(MAKE) -f testbot_lab2/CMakeFiles/testbot_lab2_generate_messages_eus.dir/build.make testbot_lab2/CMakeFiles/testbot_lab2_generate_messages_eus.dir/build
+.PHONY : testbot_lab2_generate_messages_eus/fast
+
+# Convenience name for target.
+testbot_lab2/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule:
+	cd /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build && $(MAKE) -f CMakeFiles/Makefile2 testbot_lab2/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
+.PHONY : testbot_lab2/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+actionlib_generate_messages_nodejs: testbot_lab2/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
+
+.PHONY : actionlib_generate_messages_nodejs
+
+# fast build rule for target.
+actionlib_generate_messages_nodejs/fast:
+	cd /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build && $(MAKE) -f testbot_lab2/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make testbot_lab2/CMakeFiles/actionlib_generate_messages_nodejs.dir/build
+.PHONY : actionlib_generate_messages_nodejs/fast
+
+# Convenience name for target.
 testbot_lab2/CMakeFiles/actionlib_generate_messages_py.dir/rule:
 	cd /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build && $(MAKE) -f CMakeFiles/Makefile2 testbot_lab2/CMakeFiles/actionlib_generate_messages_py.dir/rule
 .PHONY : testbot_lab2/CMakeFiles/actionlib_generate_messages_py.dir/rule
@@ -646,6 +706,21 @@ actionlib_msgs_generate_messages_eus: testbot_lab2/CMakeFiles/actionlib_msgs_gen
 actionlib_msgs_generate_messages_eus/fast:
 	cd /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build && $(MAKE) -f testbot_lab2/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build.make testbot_lab2/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build
 .PHONY : actionlib_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+testbot_lab2/CMakeFiles/_testbot_lab2_generate_messages_check_deps_jint_control_srv.dir/rule:
+	cd /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build && $(MAKE) -f CMakeFiles/Makefile2 testbot_lab2/CMakeFiles/_testbot_lab2_generate_messages_check_deps_jint_control_srv.dir/rule
+.PHONY : testbot_lab2/CMakeFiles/_testbot_lab2_generate_messages_check_deps_jint_control_srv.dir/rule
+
+# Convenience name for target.
+_testbot_lab2_generate_messages_check_deps_jint_control_srv: testbot_lab2/CMakeFiles/_testbot_lab2_generate_messages_check_deps_jint_control_srv.dir/rule
+
+.PHONY : _testbot_lab2_generate_messages_check_deps_jint_control_srv
+
+# fast build rule for target.
+_testbot_lab2_generate_messages_check_deps_jint_control_srv/fast:
+	cd /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build && $(MAKE) -f testbot_lab2/CMakeFiles/_testbot_lab2_generate_messages_check_deps_jint_control_srv.dir/build.make testbot_lab2/CMakeFiles/_testbot_lab2_generate_messages_check_deps_jint_control_srv.dir/build
+.PHONY : _testbot_lab2_generate_messages_check_deps_jint_control_srv/fast
 
 # Convenience name for target.
 testbot_lab2/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule:
@@ -723,6 +798,21 @@ tf2_msgs_generate_messages_cpp/fast:
 .PHONY : tf2_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
+testbot_lab2/CMakeFiles/_testbot_lab2_generate_messages_check_deps_oint_control_srv.dir/rule:
+	cd /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build && $(MAKE) -f CMakeFiles/Makefile2 testbot_lab2/CMakeFiles/_testbot_lab2_generate_messages_check_deps_oint_control_srv.dir/rule
+.PHONY : testbot_lab2/CMakeFiles/_testbot_lab2_generate_messages_check_deps_oint_control_srv.dir/rule
+
+# Convenience name for target.
+_testbot_lab2_generate_messages_check_deps_oint_control_srv: testbot_lab2/CMakeFiles/_testbot_lab2_generate_messages_check_deps_oint_control_srv.dir/rule
+
+.PHONY : _testbot_lab2_generate_messages_check_deps_oint_control_srv
+
+# fast build rule for target.
+_testbot_lab2_generate_messages_check_deps_oint_control_srv/fast:
+	cd /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build && $(MAKE) -f testbot_lab2/CMakeFiles/_testbot_lab2_generate_messages_check_deps_oint_control_srv.dir/build.make testbot_lab2/CMakeFiles/_testbot_lab2_generate_messages_check_deps_oint_control_srv.dir/build
+.PHONY : _testbot_lab2_generate_messages_check_deps_oint_control_srv/fast
+
+# Convenience name for target.
 testbot_lab2/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule:
 	cd /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build && $(MAKE) -f CMakeFiles/Makefile2 testbot_lab2/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
 .PHONY : testbot_lab2/CMakeFiles/tf2_msgs_generate_messages_py.dir/rule
@@ -752,66 +842,6 @@ tf2_msgs_generate_messages_lisp/fast:
 	cd /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build && $(MAKE) -f testbot_lab2/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build.make testbot_lab2/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/build
 .PHONY : tf2_msgs_generate_messages_lisp/fast
 
-# Convenience name for target.
-testbot_lab2/CMakeFiles/testbot_lab2_gencpp.dir/rule:
-	cd /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build && $(MAKE) -f CMakeFiles/Makefile2 testbot_lab2/CMakeFiles/testbot_lab2_gencpp.dir/rule
-.PHONY : testbot_lab2/CMakeFiles/testbot_lab2_gencpp.dir/rule
-
-# Convenience name for target.
-testbot_lab2_gencpp: testbot_lab2/CMakeFiles/testbot_lab2_gencpp.dir/rule
-
-.PHONY : testbot_lab2_gencpp
-
-# fast build rule for target.
-testbot_lab2_gencpp/fast:
-	cd /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build && $(MAKE) -f testbot_lab2/CMakeFiles/testbot_lab2_gencpp.dir/build.make testbot_lab2/CMakeFiles/testbot_lab2_gencpp.dir/build
-.PHONY : testbot_lab2_gencpp/fast
-
-# Convenience name for target.
-testbot_lab2/CMakeFiles/testbot_lab2_genpy.dir/rule:
-	cd /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build && $(MAKE) -f CMakeFiles/Makefile2 testbot_lab2/CMakeFiles/testbot_lab2_genpy.dir/rule
-.PHONY : testbot_lab2/CMakeFiles/testbot_lab2_genpy.dir/rule
-
-# Convenience name for target.
-testbot_lab2_genpy: testbot_lab2/CMakeFiles/testbot_lab2_genpy.dir/rule
-
-.PHONY : testbot_lab2_genpy
-
-# fast build rule for target.
-testbot_lab2_genpy/fast:
-	cd /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build && $(MAKE) -f testbot_lab2/CMakeFiles/testbot_lab2_genpy.dir/build.make testbot_lab2/CMakeFiles/testbot_lab2_genpy.dir/build
-.PHONY : testbot_lab2_genpy/fast
-
-# Convenience name for target.
-testbot_lab2/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule:
-	cd /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build && $(MAKE) -f CMakeFiles/Makefile2 testbot_lab2/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
-.PHONY : testbot_lab2/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_nodejs: testbot_lab2/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
-
-.PHONY : actionlib_generate_messages_nodejs
-
-# fast build rule for target.
-actionlib_generate_messages_nodejs/fast:
-	cd /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build && $(MAKE) -f testbot_lab2/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make testbot_lab2/CMakeFiles/actionlib_generate_messages_nodejs.dir/build
-.PHONY : actionlib_generate_messages_nodejs/fast
-
-# Convenience name for target.
-testbot_lab2/CMakeFiles/testbot_lab2_generate_messages_eus.dir/rule:
-	cd /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build && $(MAKE) -f CMakeFiles/Makefile2 testbot_lab2/CMakeFiles/testbot_lab2_generate_messages_eus.dir/rule
-.PHONY : testbot_lab2/CMakeFiles/testbot_lab2_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-testbot_lab2_generate_messages_eus: testbot_lab2/CMakeFiles/testbot_lab2_generate_messages_eus.dir/rule
-
-.PHONY : testbot_lab2_generate_messages_eus
-
-# fast build rule for target.
-testbot_lab2_generate_messages_eus/fast:
-	cd /home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/build && $(MAKE) -f testbot_lab2/CMakeFiles/testbot_lab2_generate_messages_eus.dir/build.make testbot_lab2/CMakeFiles/testbot_lab2_generate_messages_eus.dir/build
-.PHONY : testbot_lab2_generate_messages_eus/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -819,13 +849,13 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... list_install_components"
-	@echo "... edit_cache"
 	@echo "... testbot_lab2_generate_messages_py"
 	@echo "... install"
 	@echo "... testbot_lab2_gennodejs"
 	@echo "... testbot_lab2_generate_messages_nodejs"
 	@echo "... testbot_lab2_generate_messages_lisp"
 	@echo "... testbot_lab2_geneus"
+	@echo "... testbot_lab2_gencpp"
 	@echo "... tf_generate_messages_nodejs"
 	@echo "... tf2_msgs_generate_messages_nodejs"
 	@echo "... tf_generate_messages_cpp"
@@ -853,21 +883,23 @@ help:
 	@echo "... tf_generate_messages_py"
 	@echo "... sensor_msgs_generate_messages_py"
 	@echo "... actionlib_generate_messages_lisp"
+	@echo "... test"
+	@echo "... testbot_lab2_genpy"
+	@echo "... testbot_lab2_generate_messages_eus"
+	@echo "... actionlib_generate_messages_nodejs"
 	@echo "... actionlib_generate_messages_py"
 	@echo "... actionlib_msgs_generate_messages_eus"
+	@echo "... _testbot_lab2_generate_messages_check_deps_jint_control_srv"
 	@echo "... actionlib_msgs_generate_messages_lisp"
 	@echo "... actionlib_msgs_generate_messages_cpp"
 	@echo "... _testbot_lab2_generate_messages_check_deps_myoint"
 	@echo "... actionlib_msgs_generate_messages_py"
 	@echo "... tf2_msgs_generate_messages_cpp"
+	@echo "... edit_cache"
+	@echo "... _testbot_lab2_generate_messages_check_deps_oint_control_srv"
 	@echo "... install/strip"
 	@echo "... tf2_msgs_generate_messages_py"
 	@echo "... tf2_msgs_generate_messages_lisp"
-	@echo "... testbot_lab2_gencpp"
-	@echo "... test"
-	@echo "... testbot_lab2_genpy"
-	@echo "... actionlib_generate_messages_nodejs"
-	@echo "... testbot_lab2_generate_messages_eus"
 .PHONY : help
 
 
