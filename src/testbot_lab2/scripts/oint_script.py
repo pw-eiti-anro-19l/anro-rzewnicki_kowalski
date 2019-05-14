@@ -112,8 +112,8 @@ def interpolation(information):
 		return 'ok-done linear'
 
 	elif(information.type == 'cubic'):
-		information.z=information.z-1.57
-		information.y=information.y-1.57
+		#information.z=information.z-1.57
+		#information.y=information.y-1.57
 
 		samples=abs(information.y-start_pos_y)*1000
 		rate = rospy.Rate(60) # rate if too fast used with rate.sleep() at the end of loop
