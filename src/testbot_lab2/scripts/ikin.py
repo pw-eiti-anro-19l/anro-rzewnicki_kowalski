@@ -27,25 +27,26 @@ def to_joint_state(px,py,pz):
 
 def ikin_handler(information):
 	x, y, z = information.pose.position.x, information.pose.position.y,  information.pose.position.z
+	if( (x**2+ y**2) > 0.09 or z > 0.2 or (x**2+ y**2) < 0.04): #TODO check if ok
+		rospy.logerr('Polozenie poza przestrzenia manipulatora')
+	else:
+		q3 = dh[0][1] - z
+		c2 = ( ( x**2 + y**2 - dh[1][0]**2 - dh[2][0]**2 ) / (2*dh[1][0]*dh[2][0]) )
+		if (c2 > 1):
+			c2 =1
+		elif (c2< -1):
+			c2 = -1
+		s2 = (1-(c2)**2)**0.5    #sqrt( 1 - ((c2)**2))
+		q2 = acos( c2 ) 
 
-	q3 = dh[0][1] - z
-	rospy.loginfo( q3)
-	c2 = ( ( x**2 + y**2 - dh[1][0]**2 - dh[2][0]**2 ) / (2*dh[1][0]*dh[2][0]) )
-	if (c2 > 1):
-		c2 =1
-	elif (c2< -1):
-		c2 = -1
-	s2 = (1-(c2)**2)**0.5    #sqrt( 1 - ((c2)**2))
-	q2 = acos( c2 ) 
+#s1 = (dh[2][0]*s2*x + (dh[1][0] + dh[2][0]*c2)*y)/ ( (dh[2][0]*s2)^2 + (dh[1][0] + dh[2][0]*c2)^2)
+#c1 = ((dh[1][0] + dh[2][0]*c2)*x - dh[2][0]*s2*y)/ ( (dh[2][0]*s2)^2 + (dh[1][0] + dh[2][0]*c2)^2)
+		q1 = atan2((dh[2][0]*s2*x+(dh[1][0] + dh[2][0]*c2)*y), ((dh[1][0] + dh[2][0]*c2)*x - dh[2][0]*s2*y) )
+		if (q1 > 0):
+			q2 = -q2
+		#rospy.loginfo( [q1,q2,q3, c2 ,x, y, dh[1][0], dh[2][0] ] )
+		to_joint_state(q1,q2,q3)
 
-
-	#s1 = (dh[2][0]*s2*x + (dh[1][0] + dh[2][0]*c2)*y)/ ( (dh[2][0]*s2)^2 + (dh[1][0] + dh[2][0]*c2)^2)
-	#c1 = ((dh[1][0] + dh[2][0]*c2)*x - dh[2][0]*s2*y)/ ( (dh[2][0]*s2)^2 + (dh[1][0] + dh[2][0]*c2)^2)
-	q1 = atan2((dh[2][0]*s2*x+(dh[1][0] + dh[2][0]*c2)*y), ((dh[1][0] + dh[2][0]*c2)*x - dh[2][0]*s2*y) )
-	if (q1 > 0):
-		q2 = -q2
-	rospy.loginfo( [q1,q2,q3, c2 ,x, y, dh[1][0], dh[2][0] ] )
-	to_joint_state(q1,q2,q3)
 
 if __name__ == '__main__':
 	rospy.init_node('ikin', anonymous=True)
