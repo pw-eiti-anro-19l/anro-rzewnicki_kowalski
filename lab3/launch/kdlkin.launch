@@ -1,0 +1,12 @@
+<launch>
+  <param name="robot_description" command="xacro --inorder '$(find testbot_lab2)/urdf/second.urdf'"/>
+  <arg name="rvizconfig" default="$(find testbot_lab2)/rviz/defaultkin.rviz" />
+
+  <param name="use_gui" value="true"/>
+
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+  <node name="kdl_dkin" pkg="testbot_lab2" type="kdl_dkin.py" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
+
+</launch>
