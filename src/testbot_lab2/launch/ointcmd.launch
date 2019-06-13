@@ -1,6 +1,0 @@
-<launch>
-
-
-    <node name="oint_cmd" pkg="testbot_lab2" type="oint_cmd.py" output="screen"/>
-
-</launch>

@@ -1,2 +1,0 @@
-beginner_tutorials:lab1:testbot_lab2
--DCATKIN_DEVEL_PREFIX=/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/devel -DCMAKE_INSTALL_PREFIX=/home/przewnic/Documents/ANRO/anro-rzewnicki_kowalski/install -G Unix Makefiles
